@@ -1,23 +1,34 @@
-# bulma-polaris
+# Bulma Polaris
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Bundle
 ```
-npm run serve
+npm run build-bundle
 ```
 
-### Compiles and minifies for production
+### Install locally
 ```
-npm run build
+npm install ../path-to-project
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+## Usage
+### Full bundle
+```javascript
+import Vue from 'vue';
+import BulmaPolaris from '@upatra/bulma-polaris';
+import '@upatra/bulma-polaris/dist/bulma-polaris.css';
+
+Vue.use(BulmaPolaris)
+
 ```
 
 ### Customize configuration
