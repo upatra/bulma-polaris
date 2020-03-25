@@ -4,7 +4,7 @@ import '@/styles/main.scss';
 const Components = {
 };
 
-const PolarisVue = {
+const BulmaPolaris = {
   install(Vue, options = {}) {
     for (let componentKey in Components) {
       Vue.component(componentKey, Components[componentKey]);
