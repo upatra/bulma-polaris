@@ -1,0 +1,28 @@
+// Set your brand colors
+$body-background-color: #f4f6f8;
+$primary: #5c6ac4;
+$primary-invert: #ffffff;
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+$success: #bbe5b3;
+$success-invert: #414f3e;
+$info: #b4e1fa;
+$info-invert: #3e4e57;
+$warning: #ffc58b;
+$warning-invert: #594430;
+$light: #dfe3e8;
+$link: $primary;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$control-border-width: 1px;
+$input-border-color: $light;
+$input-shadow: none;
+
+// Extension
+// Pageloader
+$pageloader-opacity: 0.5;

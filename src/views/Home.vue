@@ -47,25 +47,53 @@
       </div>
     </div>
 
-    <article class="message">
-      <div class="message-header">
+    <article class="polaris-message">
+      <div class="polaris-message-header">
         <p>Order archived</p>
       </div>
-      <div class="message-body">
+      <div class="polaris-message-body">
         This order was archived on March 7, 2017 at 3:12pm EDT.
       </div>
     </article>
+
+    <div class="section-card">
+      <button class="button is-primary" data-tooltip="Tooltip Text">Tooltip</button>
+
+      <button class="button is-primary" data-tooltip="Test page loader" @click="enablePageLoader()">Page loader</button>
+      <PLoading :active="loading" message="Waiting for us">
+      </PLoading>
+
+      <PUpload v-model="testFile"></PUpload>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PLoading from '@/components/PLoading/PLoading.vue'
+import PUpload from '@/components/PUpload/PUpload.vue'
 
+// @ is an alias to /src
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    PLoading,
+    PUpload
+  },
+  data() {
+    return {
+      loading: false,
+      testFile: null
+    }
+  },
+  methods: {
+    enablePageLoader: function() {
+      this.loading = true
+
+      const self = this;
+      setTimeout(() => {
+        self.loading = false;
+      }, 3000)
+    },
+  },
 }
 </script>
