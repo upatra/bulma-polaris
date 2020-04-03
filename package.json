@@ -1,8 +1,7 @@
 {
   "name": "@upatra/bulma-polaris",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "main": "./dist/bulma-polaris.common.js",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
