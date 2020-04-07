@@ -3,10 +3,12 @@ import '@/styles/main.scss';
 
 import PLoading from './PLoading/PLoading.vue'
 import PUpload from './PUpload/PUpload.vue'
+import DropdownCheckbox from './DropdownCheckbox/DropdownCheckbox.vue'
 
 const Components = {
   PLoading,
-  PUpload
+  PUpload,
+  DropdownCheckbox,
 };
 
 const BulmaPolaris = {
