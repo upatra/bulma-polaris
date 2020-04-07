@@ -10,7 +10,7 @@
         </div>
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
-                <div class="dropdown-item" v-bind:key="dropDownItem" v-for="dropDownItem in dropDownItems">
+                <div class="dropdown-item" v-bind:key="dropDownItem.value" v-for="dropDownItem in dropDownItems">
                     <label class="checkbox">
                         <input type="checkbox" v-model="checkedValue" :value='dropDownItem.value' @change="onChange($event)"> 
                         {{ dropDownItem.text }}
