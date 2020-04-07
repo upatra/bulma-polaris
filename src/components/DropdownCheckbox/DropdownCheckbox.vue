@@ -47,7 +47,7 @@ export default {
         clearCheckedValue() {
             this.checkedValue = [];
             this.canClear = false;
-            this.$emit('clearChecked', []);
+            this.$emit('clearChecked', this.checkedValue);
         }
     }    
 }
