@@ -13,7 +13,7 @@
       v-bind:dropDownTitle="dropDownTitle"
       v-bind:dropDownItems="dropDownItems"
       @checked="dropDownStatusChecked"
-      @clearCheckedValue="dropDownCheckedClear">
+      @clearChecked="dropDownCheckedClear">
     </dropdown-checkbox>
 
     <div class="section-card">
@@ -111,10 +111,10 @@ export default {
       }, 3000);
     },
     dropDownStatusChecked(value) {
-      // console.log(value);
+      console.log(value);
     },
     dropDownCheckedClear(value) {
-      // console.log(value);
+      console.log(value);
     },
   },
 };
