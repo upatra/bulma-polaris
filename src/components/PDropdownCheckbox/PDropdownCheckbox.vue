@@ -2,7 +2,7 @@
     <div class="dropdown" :class="isActive ? 'is-active' : ''" @blur="onBlur()">
         <div class="dropdown-trigger" @click="onClick()">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>{{ dropDownTitle }}</span>
+            <span>{{ dropdownTitle }}</span>
             <span class="icon is-small">
                 <i class="fas" :class="isActive ? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
             </span>
@@ -10,7 +10,7 @@
         </div>
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
-                <div class="dropdown-item" :key="dropDownItem.value" v-for="dropDownItem in dropDownItems">
+                <div class="dropdown-item" :key="dropDownItem.value" v-for="dropDownItem in dropdownItems">
                     <label class="checkbox">
                         <input type="checkbox" 
                             v-model="checkedValue" 
@@ -31,7 +31,7 @@
 <script>
 export default {
     name: 'PDropdownCheckbox',
-    props: ['dropDownTitle', 'dropDownItems'],
+    props: ['dropdownTitle', 'dropdownItems'],
     data() {
         return {
             isActive: false,

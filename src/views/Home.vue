@@ -12,8 +12,8 @@
     <div class="section-card">
       <p-dropdown-checkbox
         v-model="checkedValue"
-        v-bind:dropDownTitle="dropDownTitle"
-        v-bind:dropDownItems="dropDownItems"
+        v-bind:dropdownTitle="dropdownTitle"
+        v-bind:dropdownItems="dropdownItems"
        >
       </p-dropdown-checkbox>
     </div>
@@ -95,8 +95,8 @@ export default {
       checkedValue: [],
       loading: false,
       testFile: null,
-      dropDownTitle: 'Sample Title Hoho',
-      dropDownItems: [
+      dropdownTitle: 'Sample Title Hoho',
+      dropdownItems: [
           {value: 'sample_value_1', text: 'Sample Text 1'},
           {value: 'sample_value_2', text: 'Sample Text 2'},
           {value: 'sample_value_3', text: 'Sample Text 3'},
