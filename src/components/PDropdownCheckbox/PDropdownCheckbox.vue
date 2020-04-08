@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name: 'DropdownCheckbox',
+    name: 'PDropdownCheckbox',
     props: ['dropDownTitle', 'dropDownItems'],
     data() {
         return {
