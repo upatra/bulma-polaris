@@ -9,12 +9,14 @@
     <br/>
     </p>
 
-    <dropdown-checkbox
-      v-bind:dropDownTitle="dropDownTitle"
-      v-bind:dropDownItems="dropDownItems"
-      @checked="dropDownStatusChecked"
-      @clearChecked="dropDownCheckedClear">
-    </dropdown-checkbox>
+    <div class="section-card">
+      <p-dropdown-checkbox
+        v-model="checkedValue"
+        v-bind:dropDownTitle="dropDownTitle"
+        v-bind:dropDownItems="dropDownItems"
+       >
+      </p-dropdown-checkbox>
+    </div>
 
     <div class="section-card">
       <div class="section-card-title">
@@ -78,7 +80,7 @@
 <script>
 import PLoading from '@/components/PLoading/PLoading.vue';
 import PUpload from '@/components/PUpload/PUpload.vue';
-import DropdownCheckbox from '@/components/DropdownCheckbox/DropdownCheckbox.vue';
+import PDropdownCheckbox from '@/components/PDropdownCheckbox/PDropdownCheckbox.vue';
 
 // @ is an alias to /src
 export default {
@@ -86,10 +88,11 @@ export default {
   components: {
     PLoading,
     PUpload,
-    DropdownCheckbox,
+    PDropdownCheckbox,
   },
   data() {
     return {
+      checkedValue: [],
       loading: false,
       testFile: null,
       dropDownTitle: 'Sample Title Hoho',
@@ -109,12 +112,6 @@ export default {
       setTimeout(() => {
         self.loading = false;
       }, 3000);
-    },
-    dropDownStatusChecked(value) {
-      console.log(value);
-    },
-    dropDownCheckedClear(value) {
-      console.log(value);
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-    <div class="dropdown" :class="isActive ? 'is-active' : ''">
+    <div class="dropdown" :class="isActive ? 'is-active' : ''" @blur="onBlur()">
         <div class="dropdown-trigger" @click="onClick()">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
             <span>{{ dropDownTitle }}</span>
@@ -10,9 +10,12 @@
         </div>
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
-                <div class="dropdown-item" v-bind:key="dropDownItem.value" v-for="dropDownItem in dropDownItems">
+                <div class="dropdown-item" :key="dropDownItem.value" v-for="dropDownItem in dropDownItems">
                     <label class="checkbox">
-                        <input type="checkbox" v-model="checkedValue" :value='dropDownItem.value' @change="onChange($event)"> 
+                        <input type="checkbox" 
+                            v-model="checkedValue" 
+                            :value="dropDownItem.value"
+                            @change="onChange"> 
                         {{ dropDownItem.text }}
                     </label>
                 </div>
@@ -37,18 +40,21 @@ export default {
         }
     },
     methods: {
+        onBlur() {
+            this.isActive = false
+        },
         onClick() {
             this.isActive = !this.isActive;
         },
-        onChange(event) {        
+        onChange() {        
             this.canClear = this.checkedValue.length > 0 ? true : false;
-            this.$emit('checked', this.checkedValue);
+            this.$emit('input', this.checkedValue);
         },
         clearCheckedValue() {
             this.checkedValue = [];
             this.canClear = false;
-            this.$emit('clearChecked', this.checkedValue);
-        }
+            this.$emit('input', this.checkedValue);
+        },
     }    
 }
 </script>
