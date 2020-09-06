@@ -10,6 +10,15 @@
     </p>
 
     <div class="section-card">
+      <p-dropdown-checkbox
+        v-model="checkedValue"
+        v-bind:dropdownTitle="dropdownTitle"
+        v-bind:dropdownItems="dropdownItems"
+       >
+      </p-dropdown-checkbox>
+    </div>
+
+    <div class="section-card">
       <div class="section-card-title">
         Section card title
       </div>
@@ -69,31 +78,41 @@
 </template>
 
 <script>
-import PLoading from '@/components/PLoading/PLoading.vue'
-import PUpload from '@/components/PUpload/PUpload.vue'
+import PLoading from '@/components/PLoading/PLoading.vue';
+import PUpload from '@/components/PUpload/PUpload.vue';
+import PDropdownCheckbox from '@/components/PDropdownCheckbox/PDropdownCheckbox.vue';
 
 // @ is an alias to /src
 export default {
   name: 'Home',
   components: {
     PLoading,
-    PUpload
+    PUpload,
+    PDropdownCheckbox,
   },
   data() {
     return {
+      checkedValue: [],
       loading: false,
-      testFile: null
-    }
+      testFile: null,
+      dropdownTitle: 'Sample Title Hoho',
+      dropdownItems: [
+          {value: 'sample_value_1', text: 'Sample Text 1'},
+          {value: 'sample_value_2', text: 'Sample Text 2'},
+          {value: 'sample_value_3', text: 'Sample Text 3'},
+          {value: 'sample_value_4', text: 'Sample Text 4'},
+      ],
+    };
   },
   methods: {
     enablePageLoader: function() {
-      this.loading = true
+      this.loading = true;
 
       const self = this;
       setTimeout(() => {
         self.loading = false;
-      }, 3000)
+      }, 3000);
     },
   },
-}
+};
 </script>
